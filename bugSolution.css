@@ -1,0 +1,18 @@
+One solution is to avoid nested `calc()` expressions and instead calculate the values separately before applying them to the element. This gives more control over the order of operations and reduces the likelihood of unexpected results. Another potential solution would be to use JavaScript to directly calculate the width and then apply that value as inline styling. This bypasses any potential calculation order issues with `calc()`.  Here's an example of how to restructure the CSS:
+
+```css
+:root {
+  --container-width: 500px;
+  --element-margin: 10px;
+}
+
+.container {
+  width: var(--container-width);
+}
+
+.element {
+  width: calc(var(--container-width) - var(--element-margin));
+}
+```
+
+This revised CSS separates the calculation of the `container` width from the calculation of the `element` width.  This makes the calculation order explicit and more predictable.
