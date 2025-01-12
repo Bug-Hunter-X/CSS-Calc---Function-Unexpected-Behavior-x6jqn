@@ -1,0 +1,9 @@
+The CSS property `calc()` is used to perform calculations within CSS. However, it can sometimes lead to unexpected behavior if not used correctly. For example, consider the following code:
+
+```css
+.element {
+  width: calc(100% - 10px);
+}
+```
+
+This code intends to set the width of the element to 100% of its container's width minus 10 pixels. However, if the container's width itself is calculated using `calc()`, or if it depends on another element's dimensions that are also calculated using `calc()`, it might not render as expected due to unexpected order of operations or rounding errors. The browser might not calculate all the `calc()` values in the expected order, resulting in unexpected results. 
